@@ -36,7 +36,7 @@
         name: "Uplink to RW-{{ site_abbv }}-01"
         type: trunk
         vlan: 35
-        portId: 30
+        portId: 20
 
 
 
