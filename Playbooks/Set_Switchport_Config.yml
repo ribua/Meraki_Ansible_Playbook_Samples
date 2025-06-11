@@ -5,8 +5,8 @@
 - hosts: localhost
   gather_facts: false
   vars:
-    switch1_serial: "Q2KP-MWTJ-YLMN"
-    site_abbv: "SYD"
+    switch1_serial: Q2KP-MWTJ-YLMN
+    site_abbv: SYD
 
   tasks:
     - name: Configure Switch1 Port1 To Router
