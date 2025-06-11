@@ -9,20 +9,6 @@
     site_abbv: SYD
 
   tasks:
-
-    - name: Get existing ports on the switch
-      uri:
-        url: "https://api.meraki.com/api/v1/devices/{{ switch1_serial }}/switchPorts"
-        headers:
-          X-Cisco-Meraki-API-Key: "{{ meraki_api_key }}"
-        method: GET
-        return_content: yes
-      register: ports_response
-
-    - debug:
-        msg: "{{ ports_response.json | map(attribute='name') | list }}"
-
-
     - name: Configure Switch1 Port1 To Router
       cisco.meraki.devices_switch_ports:
         meraki_api_key: "{{ meraki_api_key }}"
