@@ -41,7 +41,7 @@
     
     - name: Configure switch1 Port2 to AP
       cisco.meraki.devices_switch_ports:
-        meraki_suppress_logging: true
+#        meraki_suppress_logging: true
         state: present         
         serial: "{{ switch1_serial }}"
         name: Link to {{ site_abbv }}-AP01
