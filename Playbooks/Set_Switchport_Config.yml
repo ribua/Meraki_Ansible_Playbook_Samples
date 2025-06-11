@@ -5,7 +5,7 @@
 - hosts: localhost
   gather_facts: false
   vars:
-    switch1_serial: "Q2KP-MWTJ-YLMN"
+    switch1_serial: Q2KP-MWTJ-YLMN
     site_abbv: MEL
 
   tasks:
@@ -33,10 +33,10 @@
         meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
         state: present
         serial: "{{ switch1_serial }}"
-        name: Uplink to RW-{{ site_abbv }}-01
+        name: "Uplink to RW-{{ site_abbv }}-01"
         type: trunk
-        vlan: "35"
-        portId: "1"
+        vlan: 35
+        portId: 1
 
 
 
