@@ -16,12 +16,12 @@
         meraki_single_request_timeout: ''
         meraki_certificate_path: ''
         meraki_requests_proxy: true
-        meraki_wait_on_rate_limit: 60
-        meraki_nginx_429_retry_wait_time: 60
-        meraki_action_batch_retry_wait_time: 60
+        meraki_wait_on_rate_limit: '60'
+        meraki_nginx_429_retry_wait_time: '60'
+        meraki_action_batch_retry_wait_time: '60'
         meraki_retry_4xx_error: false
-        meraki_retry_4xx_error_wait_time: 60
-        meraki_maximum_retries: 2
+        meraki_retry_4xx_error_wait_time: '60'
+        meraki_maximum_retries: '2'
         meraki_output_log: true
         meraki_log_file_prefix: meraki_api_
         meraki_log_path: ''
