@@ -5,7 +5,7 @@
 - hosts: localhost
   gather_facts: false
   vars:
-    switch1_serial: Q212-3456-ABCD
+    switch1_serial: Q2KP-MWTJ-YLMN
     site_abbv: SYD
 
   tasks:
