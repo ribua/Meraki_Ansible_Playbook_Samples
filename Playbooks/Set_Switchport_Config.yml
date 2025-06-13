@@ -11,6 +11,7 @@
   tasks:
     - name: Configure Switch1 Port1 To Router
       cisco.meraki.devices_switch_ports:
+        meraki_api_key: "{{ meraki_api_key }}"
         meraki_suppress_logging: true
         state: present
         serial: "{{ switch1_serial }}"
@@ -21,6 +22,7 @@
     
     - name: Configure switch1 Port2 to AP
       cisco.meraki.devices_switch_ports:
+        meraki_api_key: "{{ meraki_api_key }}"
         meraki_suppress_logging: true
         state: present         
         serial: "{{ switch1_serial }}"
@@ -31,6 +33,7 @@
 
     - name: Configure switch1 Port3 to POS Printer
       cisco.meraki.devices_switch_ports:
+        meraki_api_key: "{{ meraki_api_key }}"
         meraki_suppress_logging: true
         state: present         
         serial: "{{ switch1_serial }}"
@@ -41,6 +44,7 @@
 
     - name: Configure switch1 Port4 to Printer
       cisco.meraki.devices_switch_ports:
+        meraki_api_key: "{{ meraki_api_key }}"
         meraki_suppress_logging: true
         state: present         
         serial: "{{ switch1_serial }}"
@@ -52,6 +56,7 @@
     - name: Configure switch1 Port5
       cisco.meraki.devices_switch_ports:
         meraki_suppress_logging: true
+        meraki_api_key: "{{ meraki_api_key }}"
         state: present         
         serial: "{{ switch1_serial }}"
         name: User Access 
@@ -62,6 +67,7 @@
 
     - name: Configure switch1 Port6
       cisco.meraki.devices_switch_ports:
+        meraki_api_key: "{{ meraki_api_key }}"
         meraki_suppress_logging: true
         state: present         
         serial: "{{ switch1_serial }}"
@@ -73,6 +79,7 @@
 
     - name: Configure switch1 Port7
       cisco.meraki.devices_switch_ports:
+        meraki_api_key: "{{ meraki_api_key }}"
         meraki_suppress_logging: true
         state: present         
         serial: "{{ switch1_serial }}"
@@ -84,6 +91,7 @@
 
     - name: Configure switch1 Port8
       cisco.meraki.devices_switch_ports:
+        meraki_api_key: "{{ meraki_api_key }}"
         meraki_suppress_logging: true
         state: present         
         serial: "{{ switch1_serial }}"
@@ -94,6 +102,7 @@
 
     - name: Configure switch1 Port9
       cisco.meraki.devices_switch_ports:
+        meraki_api_key: "{{ meraki_api_key }}"
         meraki_suppress_logging: true
         state: present         
         serial: "{{ switch1_serial }}"
@@ -104,6 +113,7 @@
 
     - name: Configure switch1 Port10
       cisco.meraki.devices_switch_ports:
+        meraki_api_key: "{{ meraki_api_key }}"
         meraki_suppress_logging: true
         state: present         
         serial: "{{ switch1_serial }}"
@@ -114,6 +124,7 @@
 
     - name: Configure switch1 Port11
       cisco.meraki.devices_switch_ports:
+        meraki_api_key: "{{ meraki_api_key }}"
         meraki_suppress_logging: true
         state: present         
         serial: "{{ switch1_serial }}"
@@ -124,6 +135,7 @@
 
     - name: Configure switch1 Port12
       cisco.meraki.devices_switch_ports:
+        meraki_api_key: "{{ meraki_api_key }}"
         meraki_suppress_logging: true
         state: present         
         serial: "{{ switch1_serial }}"
@@ -134,6 +146,7 @@
 
     - name: Configure switch1 Port13
       cisco.meraki.devices_switch_ports:
+        meraki_api_key: "{{ meraki_api_key }}"
         meraki_suppress_logging: true
         state: present         
         serial: "{{ switch1_serial }}"
@@ -144,6 +157,7 @@
 
     - name: Configure switch1 Port14
       cisco.meraki.devices_switch_ports:
+        meraki_api_key: "{{ meraki_api_key }}"
         meraki_suppress_logging: true
         state: present         
         serial: "{{ switch1_serial }}"
@@ -155,6 +169,7 @@
     - name: Configure switch1 Port15
       cisco.meraki.devices_switch_ports:
         meraki_suppress_logging: true
+        meraki_api_key: "{{ meraki_api_key }}"
         state: present         
         serial: "{{ switch1_serial }}"
         name: User Access 
@@ -164,6 +179,7 @@
 
     - name: Configure switch1 Port16
       cisco.meraki.devices_switch_ports:
+        meraki_api_key: "{{ meraki_api_key }}"
         meraki_suppress_logging: true
         state: present         
         serial: "{{ switch1_serial }}"
@@ -174,6 +190,7 @@
 
     - name: Configure switch1 Port17
       cisco.meraki.devices_switch_ports:
+        meraki_api_key: "{{ meraki_api_key }}"
         meraki_suppress_logging: true
         state: present         
         serial: "{{ switch1_serial }}"
@@ -184,6 +201,7 @@
 
     - name: Configure switch1 Port18
       cisco.meraki.devices_switch_ports:
+        meraki_api_key: "{{ meraki_api_key }}"
         meraki_suppress_logging: true
         state: present         
         serial: "{{ switch1_serial }}"
@@ -194,6 +212,7 @@
 
     - name: Configure switch1 Port19
       cisco.meraki.devices_switch_ports:
+        meraki_api_key: "{{ meraki_api_key }}"
         meraki_suppress_logging: true
         state: present         
         serial: "{{ switch1_serial }}"
@@ -204,6 +223,7 @@
 
     - name: Configure switch1 Port20
       cisco.meraki.devices_switch_ports:
+        meraki_api_key: "{{ meraki_api_key }}"
         meraki_suppress_logging: true
         state: present         
         serial: "{{ switch1_serial }}"
@@ -215,6 +235,7 @@
 
     - name: Configure switch1 Port21
       cisco.meraki.devices_switch_ports:
+        meraki_api_key: "{{ meraki_api_key }}"
         meraki_suppress_logging: true
         state: present         
         serial: "{{ switch1_serial }}"
@@ -226,6 +247,7 @@
 
     - name: Configure switch1 Port22
       cisco.meraki.devices_switch_ports:
+        meraki_api_key: "{{ meraki_api_key }}"
         meraki_suppress_logging: true
         state: present         
         serial: "{{ switch1_serial }}"
@@ -237,6 +259,7 @@
 
     - name: Configure switch1 Port23
       cisco.meraki.devices_switch_ports:
+        meraki_api_key: "{{ meraki_api_key }}"
         meraki_suppress_logging: true
         state: present         
         serial: "{{ switch1_serial }}"
@@ -249,6 +272,7 @@
     - name: Configure switch1 Port24
       cisco.meraki.devices_switch_ports:
         meraki_suppress_logging: true
+        meraki_api_key: "{{ meraki_api_key }}"
         state: present         
         serial: "{{ switch1_serial }}"
         name: User Access 
