@@ -7,6 +7,12 @@
   vars:
     switch1_serial: Q2KP-MWTJ-YLMN
     site_abbv: SYD
+    meraki_api_key: "{{ lookup('env', 'MERAKI_API_KEY') }}"
+  module_defaults:
+    group/cisco.meraki:
+      meraki_api_key: "{{ meraki_api_key }}"
+      meraki_base_url: "https://api.meraki.com/api/v1"
+      meraki_wait_on_rate_limit: true
 
   tasks:
     - name: Configure Switch1 Port1 To Router
