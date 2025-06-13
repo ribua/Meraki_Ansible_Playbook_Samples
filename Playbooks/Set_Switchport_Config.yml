@@ -6,278 +6,253 @@
   gather_facts: false
   vars:
     switch1_serial: Q2KP-MWTJ-YLMN
-    site_abbv: MEL
+    site_abbv: SYD
 
   tasks:
     - name: Configure Switch1 Port1 To Router
       cisco.meraki.devices_switch_ports:
-        meraki_api_key: "{{ meraki_api_key }}"
-        meraki_base_url: "{{ meraki_base_url }}"
-        meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-        meraki_certificate_path: "{{ meraki_certificate_path }}"
-        meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-        meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-        meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-        meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-        meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-        meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-        meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-        meraki_output_log: "{{ meraki_output_log }}"
-        meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-        meraki_log_path: "{{ meraki_log_path }}"
-        meraki_print_console: "{{ meraki_print_console }}"
-        meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-        meraki_simulate: "{{ meraki_simulate }}"
-        meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-        meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-        meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+        meraki_suppress_logging: true
         state: present
         serial: "{{ switch1_serial }}"
-        name: "Uplink to RW-{{ site_abbv }}-01"
+        name: Uplink to RW-{{ site_abbv }}-01
         type: trunk
-        vlan: 35
-        portId: 20
-
-
-
-
-
-        
+        vlan: 1
+        portId: 1
     
-#    - name: Configure switch1 Port2 to AP
-#      cisco.meraki.devices_switch_ports:
-##        meraki_suppress_logging: true
-#        state: present         
-#        serial: "{{ switch1_serial }}"
-#        name: Link to {{ site_abbv }}-AP01
-#        type: trunk
-#        vlan: 1
-#        portId: 2
-#
-#    - name: Configure switch1 Port3 to POS Printer
-#      cisco.meraki.devices_switch_ports:
-#        meraki_suppress_logging: true
-#        state: present         
-#        serial: "{{ switch1_serial }}"
-#        name: POS Printer
-#        type: access
-#        vlan: 20
-#        portId: 3
-#
-#    - name: Configure switch1 Port4 to Printer
-#      cisco.meraki.devices_switch_ports:
-#        meraki_suppress_logging: true
-#        state: present         
-#        serial: "{{ switch1_serial }}"
-#        name: Printer 2
-#        type: access
-#        vlan: 20
-#        portId: 4
-#
-#    - name: Configure switch1 Port5
-#      cisco.meraki.devices_switch_ports:
-#        meraki_suppress_logging: true
-#        state: present         
-#        serial: "{{ switch1_serial }}"
-#        name: User Access 
-#        type: access
-#        vlan: 10
-#        voiceVlan: 11
-#        portId: 5
-#
-#    - name: Configure switch1 Port6
-#      cisco.meraki.devices_switch_ports:
-#        meraki_suppress_logging: true
-#        state: present         
-#        serial: "{{ switch1_serial }}"
-#        name: User Access 
-#        type: access
-#        vlan: 10
-#        voiceVlan: 11
-#        portId: 6
-#
-#    - name: Configure switch1 Port7
-#      cisco.meraki.devices_switch_ports:
-#        meraki_suppress_logging: true
-#        state: present         
-#        serial: "{{ switch1_serial }}"
-#        name: User Access 
-#        type: access
-#        vlan: 10
-#        voiceVlan: 11
-#        portId: 7
-#
-#    - name: Configure switch1 Port8
-#      cisco.meraki.devices_switch_ports:
-#        meraki_suppress_logging: true
-#        state: present         
-#        serial: "{{ switch1_serial }}"
-#        name: User Access 
-#        type: access
-#        vlan: 10
-#        portId: 8
-#
-#    - name: Configure switch1 Port9
-#      cisco.meraki.devices_switch_ports:
-#        meraki_suppress_logging: true
-#        state: present         
-#        serial: "{{ switch1_serial }}"
-#        name: User Access 
-#        type: access
-#        vlan: 10
-#        portId: 9
-#
-#    - name: Configure switch1 Port10
-#      cisco.meraki.devices_switch_ports:
-#        meraki_suppress_logging: true
-#        state: present         
-#        serial: "{{ switch1_serial }}"
-#        name: User Access 
-#        type: access
-#        vlan: 10
-#        portId: 10
-#
-#    - name: Configure switch1 Port11
-#      cisco.meraki.devices_switch_ports:
-#        meraki_suppress_logging: true
-#        state: present         
-#        serial: "{{ switch1_serial }}"
-#        name: User Access 
-#        type: access
-#        vlan: 10
-#        portId: 11
-#
-#    - name: Configure switch1 Port12
-#      cisco.meraki.devices_switch_ports:
-#        meraki_suppress_logging: true
-#        state: present         
-#        serial: "{{ switch1_serial }}"
-#        name: User Access 
-#        type: access
-#        vlan: 10
-#        portId: 12
-#
-#    - name: Configure switch1 Port13
-#      cisco.meraki.devices_switch_ports:
-#        meraki_suppress_logging: true
-#        state: present         
-#        serial: "{{ switch1_serial }}"
-#        name: User Access 
-#        type: access
-#        vlan: 10
-#        portId: 13
-#
-#    - name: Configure switch1 Port14
-#      cisco.meraki.devices_switch_ports:
-#        meraki_suppress_logging: true
-#        state: present         
-#        serial: "{{ switch1_serial }}"
-#        name: User Access 
-#        type: access
-#        vlan: 10
-#        portId: 14
-#
-#    - name: Configure switch1 Port15
-#      cisco.meraki.devices_switch_ports:
-#        meraki_suppress_logging: true
-#        state: present         
-#        serial: "{{ switch1_serial }}"
-#        name: User Access 
-#        type: access
-#        vlan: 10
-#        portId: 15
-#
-#    - name: Configure switch1 Port16
-#      cisco.meraki.devices_switch_ports:
-#        meraki_suppress_logging: true
-#        state: present         
-#        serial: "{{ switch1_serial }}"
-#        name: User Access 
-#        type: access
-#        vlan: 10
-#        portId: 16
-#
-#    - name: Configure switch1 Port17
-#      cisco.meraki.devices_switch_ports:
-#        meraki_suppress_logging: true
-#        state: present         
-#        serial: "{{ switch1_serial }}"
-#        name: User Access 
-#        type: access
-#        vlan: 10
-#        portId: 17
-#
-#    - name: Configure switch1 Port18
-#      cisco.meraki.devices_switch_ports:
-#        meraki_suppress_logging: true
-#        state: present         
-#        serial: "{{ switch1_serial }}"
-#        name: User Access 
-#        type: access
-#        vlan: 10
-#        portId: 18
-#
-#    - name: Configure switch1 Port19
-#      cisco.meraki.devices_switch_ports:
-#        meraki_suppress_logging: true
-#        state: present         
-#        serial: "{{ switch1_serial }}"
-#        name: User Access 
-#        type: access
-#        vlan: 10
-#        portId: 19
-#
-#    - name: Configure switch1 Port20
-#      cisco.meraki.devices_switch_ports:
-#        meraki_suppress_logging: true
-#        state: present         
-#        serial: "{{ switch1_serial }}"
-#        name: User Access 
-#        type: access
-#        vlan: 10
-#        portId: 20
-#        enabled: false
-#
-#    - name: Configure switch1 Port21
-#      cisco.meraki.devices_switch_ports:
-#        meraki_suppress_logging: true
-#        state: present         
-#        serial: "{{ switch1_serial }}"
-#        name: User Access 
-#        type: access
-#        vlan: 10
-#        portId: 21
-#        enabled: false
-#
-#    - name: Configure switch1 Port22
-#      cisco.meraki.devices_switch_ports:
-#        meraki_suppress_logging: true
-#        state: present         
-#        serial: "{{ switch1_serial }}"
-#        name: User Access 
-#        type: access
-#        vlan: 10
-#        portId: 22
-#        enabled: false
-#
-#    - name: Configure switch1 Port23
-#      cisco.meraki.devices_switch_ports:
-#        meraki_suppress_logging: true
-#        state: present         
-#        serial: "{{ switch1_serial }}"
-#        name: User Access 
-#        type: access
-#        vlan: 10
-#        portId: 23
-#        enabled: false
-#
-#    - name: Configure switch1 Port24
-#      cisco.meraki.devices_switch_ports:
-#        meraki_suppress_logging: true
-#        state: present         
-#        serial: "{{ switch1_serial }}"
-#        name: User Access 
-#        type: access
-#        vlan: 10
-#        portId: 24
-#        enabled: false
+    - name: Configure switch1 Port2 to AP
+      cisco.meraki.devices_switch_ports:
+        meraki_suppress_logging: true
+        state: present         
+        serial: "{{ switch1_serial }}"
+        name: Link to {{ site_abbv }}-AP01
+        type: trunk
+        vlan: 1
+        portId: 2
+
+    - name: Configure switch1 Port3 to POS Printer
+      cisco.meraki.devices_switch_ports:
+        meraki_suppress_logging: true
+        state: present         
+        serial: "{{ switch1_serial }}"
+        name: POS Printer
+        type: access
+        vlan: 20
+        portId: 3
+
+    - name: Configure switch1 Port4 to Printer
+      cisco.meraki.devices_switch_ports:
+        meraki_suppress_logging: true
+        state: present         
+        serial: "{{ switch1_serial }}"
+        name: Printer 2
+        type: access
+        vlan: 20
+        portId: 4
+
+    - name: Configure switch1 Port5
+      cisco.meraki.devices_switch_ports:
+        meraki_suppress_logging: true
+        state: present         
+        serial: "{{ switch1_serial }}"
+        name: User Access 
+        type: access
+        vlan: 10
+        voiceVlan: 11
+        portId: 5
+
+    - name: Configure switch1 Port6
+      cisco.meraki.devices_switch_ports:
+        meraki_suppress_logging: true
+        state: present         
+        serial: "{{ switch1_serial }}"
+        name: User Access 
+        type: access
+        vlan: 10
+        voiceVlan: 11
+        portId: 6
+
+    - name: Configure switch1 Port7
+      cisco.meraki.devices_switch_ports:
+        meraki_suppress_logging: true
+        state: present         
+        serial: "{{ switch1_serial }}"
+        name: User Access 
+        type: access
+        vlan: 10
+        voiceVlan: 11
+        portId: 7
+
+    - name: Configure switch1 Port8
+      cisco.meraki.devices_switch_ports:
+        meraki_suppress_logging: true
+        state: present         
+        serial: "{{ switch1_serial }}"
+        name: User Access 
+        type: access
+        vlan: 10
+        portId: 8
+
+    - name: Configure switch1 Port9
+      cisco.meraki.devices_switch_ports:
+        meraki_suppress_logging: true
+        state: present         
+        serial: "{{ switch1_serial }}"
+        name: User Access 
+        type: access
+        vlan: 10
+        portId: 9
+
+    - name: Configure switch1 Port10
+      cisco.meraki.devices_switch_ports:
+        meraki_suppress_logging: true
+        state: present         
+        serial: "{{ switch1_serial }}"
+        name: User Access 
+        type: access
+        vlan: 10
+        portId: 10
+
+    - name: Configure switch1 Port11
+      cisco.meraki.devices_switch_ports:
+        meraki_suppress_logging: true
+        state: present         
+        serial: "{{ switch1_serial }}"
+        name: User Access 
+        type: access
+        vlan: 10
+        portId: 11
+
+    - name: Configure switch1 Port12
+      cisco.meraki.devices_switch_ports:
+        meraki_suppress_logging: true
+        state: present         
+        serial: "{{ switch1_serial }}"
+        name: User Access 
+        type: access
+        vlan: 10
+        portId: 12
+
+    - name: Configure switch1 Port13
+      cisco.meraki.devices_switch_ports:
+        meraki_suppress_logging: true
+        state: present         
+        serial: "{{ switch1_serial }}"
+        name: User Access 
+        type: access
+        vlan: 10
+        portId: 13
+
+    - name: Configure switch1 Port14
+      cisco.meraki.devices_switch_ports:
+        meraki_suppress_logging: true
+        state: present         
+        serial: "{{ switch1_serial }}"
+        name: User Access 
+        type: access
+        vlan: 10
+        portId: 14
+
+    - name: Configure switch1 Port15
+      cisco.meraki.devices_switch_ports:
+        meraki_suppress_logging: true
+        state: present         
+        serial: "{{ switch1_serial }}"
+        name: User Access 
+        type: access
+        vlan: 10
+        portId: 15
+
+    - name: Configure switch1 Port16
+      cisco.meraki.devices_switch_ports:
+        meraki_suppress_logging: true
+        state: present         
+        serial: "{{ switch1_serial }}"
+        name: User Access 
+        type: access
+        vlan: 10
+        portId: 16
+
+    - name: Configure switch1 Port17
+      cisco.meraki.devices_switch_ports:
+        meraki_suppress_logging: true
+        state: present         
+        serial: "{{ switch1_serial }}"
+        name: User Access 
+        type: access
+        vlan: 10
+        portId: 17
+
+    - name: Configure switch1 Port18
+      cisco.meraki.devices_switch_ports:
+        meraki_suppress_logging: true
+        state: present         
+        serial: "{{ switch1_serial }}"
+        name: User Access 
+        type: access
+        vlan: 10
+        portId: 18
+
+    - name: Configure switch1 Port19
+      cisco.meraki.devices_switch_ports:
+        meraki_suppress_logging: true
+        state: present         
+        serial: "{{ switch1_serial }}"
+        name: User Access 
+        type: access
+        vlan: 10
+        portId: 19
+
+    - name: Configure switch1 Port20
+      cisco.meraki.devices_switch_ports:
+        meraki_suppress_logging: true
+        state: present         
+        serial: "{{ switch1_serial }}"
+        name: User Access 
+        type: access
+        vlan: 10
+        portId: 20
+        enabled: false
+
+    - name: Configure switch1 Port21
+      cisco.meraki.devices_switch_ports:
+        meraki_suppress_logging: true
+        state: present         
+        serial: "{{ switch1_serial }}"
+        name: User Access 
+        type: access
+        vlan: 10
+        portId: 21
+        enabled: false
+
+    - name: Configure switch1 Port22
+      cisco.meraki.devices_switch_ports:
+        meraki_suppress_logging: true
+        state: present         
+        serial: "{{ switch1_serial }}"
+        name: User Access 
+        type: access
+        vlan: 10
+        portId: 22
+        enabled: false
+
+    - name: Configure switch1 Port23
+      cisco.meraki.devices_switch_ports:
+        meraki_suppress_logging: true
+        state: present         
+        serial: "{{ switch1_serial }}"
+        name: User Access 
+        type: access
+        vlan: 10
+        portId: 23
+        enabled: false
+
+    - name: Configure switch1 Port24
+      cisco.meraki.devices_switch_ports:
+        meraki_suppress_logging: true
+        state: present         
+        serial: "{{ switch1_serial }}"
+        name: User Access 
+        type: access
+        vlan: 10
+        portId: 24
+        enabled: false
