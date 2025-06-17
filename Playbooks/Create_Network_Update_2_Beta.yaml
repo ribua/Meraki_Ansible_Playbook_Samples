@@ -17,6 +17,7 @@
       cisco.meraki.networks:
         state: present
         organizationId: 813462682693796900
+        meraki_api_key: "{{ meraki_api_key }}"
         name: "{{ item }}"
         productTypes: "{{ product_types }}"
         timeZone: "{{ time_zone }}"
