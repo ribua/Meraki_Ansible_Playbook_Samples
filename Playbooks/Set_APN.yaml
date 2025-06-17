@@ -7,7 +7,7 @@
   tasks:
     - name: Update APN for SIM1 on the target Serial
       cisco.meraki.devices_cellular_sims:
-        meraki_api_key: "{{ meraki_api_key }}"
+#        meraki_api_key: "{{ meraki_api_key }}"
         state: present
         serial: "{{ serial_device }}"
         simFailover:
