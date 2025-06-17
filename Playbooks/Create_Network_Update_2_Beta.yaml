@@ -16,7 +16,7 @@
     - name: Create Networks
       cisco.meraki.networks:
         state: present
-        organizationId: "{{ organization_id }}"
+        organizationId: 813462682693796900
         name: "{{ item }}"
         productTypes: "{{ product_types }}"
         timeZone: "{{ time_zone }}"
