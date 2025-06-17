@@ -3,7 +3,7 @@
   hosts: localhost
   gather_facts: false
   vars:
-    organization_id: "{{ org_id }}" 
+    organization_id: 813462682693796900
     time_zone: Australia/Sydney
     product_types:
       - switch
