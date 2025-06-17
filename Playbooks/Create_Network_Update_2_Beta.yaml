@@ -3,7 +3,7 @@
   hosts: localhost
   gather_facts: false
   vars:
-    organization_id: 813462682693796900
+    organization_id: 813462682693796922
     time_zone: Australia/Sydney
     product_types:
       - switch
@@ -16,8 +16,7 @@
     - name: Create Networks
       cisco.meraki.networks:
         state: present
-        organizationId: 813462682693796900
-        meraki_api_key: d9c78a06aedbfea3727c15d023bce4949bdd1022
+        organizationId: "{{ organization_id }}"
         name: "{{ item }}"
         productTypes: "{{ product_types }}"
         timeZone: "{{ time_zone }}"
