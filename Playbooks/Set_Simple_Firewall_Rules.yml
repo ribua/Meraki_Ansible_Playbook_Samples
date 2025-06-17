@@ -6,7 +6,7 @@
 - hosts: localhost
   gather_facts: false
   vars:
-    network_id: "L_#############"
+    network_id: "{{ net_id }}"
   tasks:
     - name: Create FW outbound L3 rules
       cisco.meraki.networks_appliance_firewall_l3_firewall_rules:
