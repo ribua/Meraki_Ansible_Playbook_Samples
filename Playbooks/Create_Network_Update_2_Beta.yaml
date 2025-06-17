@@ -1,0 +1,72 @@
+---
+- name: Create Networks and Schedule Firmware
+  hosts: localhost
+  gather_facts: false
+  vars_files:
+    - credentials-home.yml
+  vars:
+    organization_id: "{{ org_id }}"  # Fawbert Org ID
+    time_zone: Australia/Sydney
+    product_types:
+      - switch
+      - appliance
+      - wireless
+    network_names: |-
+      [{% for i in range(1, 6) %}"Network-{{ i }}"{% if not loop.last %}, {% endif %}{% endfor %}]
+
+  tasks:
+    - name: Create Networks
+      cisco.meraki.networks:
+        state: present
+        organizationId: "{{ organization_id }}"
+        name: "{{ item }}"
+        productTypes: "{{ product_types }}"
+        timeZone: "{{ time_zone }}"
+        meraki_api_key: "{{ meraki_api_key }}"
+      loop: "{{ network_names | from_yaml }}"
+      register: create_results
+
+    - name: Get all networks in the org
+      cisco.meraki.networks_info:
+        organizationId: "{{ organization_id }}"
+        meraki_api_key: "{{ meraki_api_key }}"
+      register: all_networks
+
+    - name: Filter networks with naming convention 'Network-#'
+      ansible.builtin.set_fact:
+        filtered_networks: >-
+          {{ all_networks.meraki_response | selectattr('name', 'match', '^Network-\d+$') | list }}
+
+    - name: Get latest beta firmware ID for Security appliance (from first filtered network)
+      cisco.meraki.networks_firmware_upgrades_info:
+        meraki_api_key: "{{ meraki_api_key }}"
+        networkId: "{{ filtered_networks[0].id }}"
+      register: firmware_info
+      when: filtered_networks | length > 0
+
+    - name: Set fact for latest beta firmware ID
+      ansible.builtin.set_fact:
+        latest_beta_id: >-
+          {{ (
+            firmware_info.meraki_response.products.appliance.availableVersions
+            | selectattr('releaseType', 'equalto', 'beta')
+            | sort(attribute='releaseDate', reverse=True)
+            | list
+          )[0].id }}
+      when: filtered_networks | length > 0
+
+    - name: Schedule firmware update for all filtered networks
+      cisco.meraki.networks_firmware_upgrades:
+        meraki_api_key: "{{ meraki_api_key }}"
+        networkId: "{{ item.id }}"
+        products:
+          appliance:
+            nextUpgrade:
+              toVersion:
+                id: "{{ latest_beta_id }}"
+              time: "{{ lookup('pipe', 'date -u +%Y-%m-%dT%H:%M:%SZ') }}"
+            participateInNextBetaRelease: false
+        timezone: "{{ time_zone }}"
+      loop: "{{ filtered_networks }}"
+      loop_control:
+        label: "{{ item.name }}"
