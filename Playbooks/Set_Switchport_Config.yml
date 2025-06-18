@@ -16,7 +16,7 @@
         serial: "{{ switch1_serial }}"
         name: Uplink to RW-{{ site_abbv }}-01
         type: trunk
-        vlan: 20
+        vlan: 21
         portId: 1
     
     - name: Configure switch1 Port2 to AP
@@ -26,7 +26,7 @@
         serial: "{{ switch1_serial }}"
         name: Link to {{ site_abbv }}-AP01
         type: trunk
-        vlan: 25
+        vlan: 2
         portId: 2
 
     - name: Configure switch1 Port3 to POS Printer
@@ -36,7 +36,7 @@
         serial: "{{ switch1_serial }}"
         name: POS Printer
         type: access
-        vlan: 30
+        vlan: 3
         portId: 3
 
     - name: Configure switch1 Port4 to Printer
@@ -46,7 +46,7 @@
         serial: "{{ switch1_serial }}"
         name: Printer 2
         type: access
-        vlan: 20
+        vlan: 4
         portId: 4
 
     - name: Configure switch1 Port5
@@ -56,7 +56,7 @@
         serial: "{{ switch1_serial }}"
         name: User Access 
         type: access
-        vlan: 10
+        vlan: 6
         voiceVlan: 11
         portId: 5
 
@@ -67,7 +67,7 @@
         serial: "{{ switch1_serial }}"
         name: User Access 
         type: access
-        vlan: 10
+        vlan: 7
         voiceVlan: 11
         portId: 6
 
@@ -78,7 +78,7 @@
         serial: "{{ switch1_serial }}"
         name: User Access 
         type: access
-        vlan: 10
+        vlan: 11
         voiceVlan: 11
         portId: 7
 
@@ -89,7 +89,7 @@
         serial: "{{ switch1_serial }}"
         name: User Access 
         type: access
-        vlan: 10
+        vlan: 21
         portId: 8
 
     - name: Configure switch1 Port9
@@ -99,7 +99,7 @@
         serial: "{{ switch1_serial }}"
         name: User Access 
         type: access
-        vlan: 10
+        vlan: 22
         portId: 9
 
     - name: Configure switch1 Port10
@@ -109,7 +109,7 @@
         serial: "{{ switch1_serial }}"
         name: User Access 
         type: access
-        vlan: 10
+        vlan: 34
         portId: 10
 
     - name: Configure switch1 Port11
@@ -119,7 +119,7 @@
         serial: "{{ switch1_serial }}"
         name: User Access 
         type: access
-        vlan: 10
+        vlan: 14
         portId: 11
 
     - name: Configure switch1 Port12
@@ -129,7 +129,7 @@
         serial: "{{ switch1_serial }}"
         name: User Access 
         type: access
-        vlan: 10
+        vlan: 9
         portId: 12
 
     - name: Configure switch1 Port13
@@ -139,7 +139,7 @@
         serial: "{{ switch1_serial }}"
         name: User Access 
         type: access
-        vlan: 10
+        vlan: 12
         portId: 13
 
     - name: Configure switch1 Port14
@@ -149,7 +149,7 @@
         serial: "{{ switch1_serial }}"
         name: User Access 
         type: access
-        vlan: 10
+        vlan: 32
         portId: 14
 
     - name: Configure switch1 Port15
